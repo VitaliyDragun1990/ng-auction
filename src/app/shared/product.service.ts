@@ -72,7 +72,8 @@ export class ProductService {
   }
 
   getProductById(productId: number): Product {
-    return products
-    .find(p => p.id === productId);
+    const product = products.find(p => p.id === productId);
+    console.log(`product found=${product}`);
+    return product;
   }
 }
