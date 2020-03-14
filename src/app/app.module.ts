@@ -1,3 +1,4 @@
+import { AuctionMaterialModule } from './auction-material/auction-material.module';
 import { ProductService } from './shared/product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SearchComponent } from './search/search.component';
 import { StarsComponent } from './stars/stars.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,13 @@ import { StarsComponent } from './stars/stars.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AuctionMaterialModule
   ],
-  providers: [ProductService],
+  providers: [
+    {provide: ProductService, useClass: ProductService}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

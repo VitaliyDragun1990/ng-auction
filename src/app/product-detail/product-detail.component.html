@@ -1,11 +1,11 @@
-<div class="thumbnail">
-  <img src="http://placehold.it/820x320">
-  <div>
-    <h4 class="float-right">{{product.price |currency}}</h4>
-    <h4>{{product.title}}</h4>
-    <p>{{product.description}}</p>
-  </div>
+<mat-card>
+  <img mat-card-image src="http://placehold.it/320x150">
+  <mat-card-title class="float-right">{{product.price |currency}}</mat-card-title>
+  <mat-card-title>{{product.title}}</mat-card-title>
+  <mat-card-content>
+    {{product.description}}
+  </mat-card-content>
   <div class="ratings">
-    <p><nga-stars [rating]="product.rating"></nga-stars></p>
+    <nga-stars [rating]="product.rating"></nga-stars>
   </div>
-</div>
+</mat-card>
